@@ -18,7 +18,5 @@ jobs:
       run: swift --version
     - name: Build
       run: swift build -v
-      if: contains(steps.version.outputs, "5.2")
     - name: Run tests
       run: swift test -v
-      if: contains(steps.version.contains, "5.2")
