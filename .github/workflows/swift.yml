@@ -12,11 +12,12 @@ jobs:
     runs-on: macos-latest
 
     steps:
-#     - uses: actions/checkout@v2
-    - uses: fwal/setup-swift@master
+    - uses: actions/checkout@v2
     - name: Check Version
       run: swift --version
     - name: Build
       run: swift build -v
+      if: steps.0.contains("5.2")
     - name: Run tests
       run: swift test -v
+      if: steps.0.contains("5.2")
